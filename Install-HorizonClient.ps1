@@ -1,19 +1,18 @@
 Param(
 		[Parameter(Position=0,
-		HelpMessage="Please enter the path to the Horizon Client installation file")]
+		HelpMessage="Enter the path to the Horizon Client installation file")]
 		[String] $FilePath = (Get-Location).ToString() + "\VMware-Horizon-Client-2106-8.3.0-18287501.exe",
 		
 		[Parameter(Position=1,
-		HelpMessage="additional arguments, check https://docs.vmware.com/en/VMware-Horizon-Client-for-Windows/2106/horizon-client-windows-installation/GUID-2DDF9C24-A1E9-4357-A832-2A5A19352D61.html for details")]	
+		HelpMessage="Specify additional arguments, check https://docs.vmware.com/en/VMware-Horizon-Client-for-Windows/2106/horizon-client-windows-installation/GUID-2DDF9C24-A1E9-4357-A832-2A5A19352D61.html for details")]	
 		[String] $ArgumentList = "ADDLOCAL=ALL /silent /norestart",
 
 		[Parameter(Position=2,
-		HelpMessage="Please specify if older Horizon Client should be updated")]		
-		[ValidateSet("CSV", "HTML", "TEXT")]
+		HelpMessage="Specify if older Horizon Client should be updated")]
 		[switch]$UpdateOldClients = $true,
 	
 		[Parameter(Position=3,
-		HelpMessage="Please specify the maximum number of rows to output. If not defined, the default value is 1000")]
+		HelpMessage="Specify Logfile location")]
 		[String] $Logfile = "$env:windir\Temp\" + "horizon-client-autoinstall-script.txt"
 	)
 
